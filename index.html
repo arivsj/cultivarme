@@ -916,6 +916,54 @@
 
         }
 
+        /* Floating Button */
+
+        .floating-btn {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            width: 60px;
+
+            height: 60px;
+
+            border-radius: 50%;
+
+            background-color: var(--secondary);
+
+            color: white;
+
+            border: 3px solid var(--light); /* Yellow border */
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 1.5rem;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+            z-index: 100;
+
+            transition: all 0.3s ease;
+
+        }
+
+        .floating-btn:hover {
+
+            background-color: var(--accent);
+
+            transform: scale(1.1);
+
+        }
+
     </style>
 
 </head>
@@ -1000,6 +1048,107 @@
 
             </div>
 
+        </div>
+
+        <!-- Modal for Confidence Information -->
+        <div id="confidence-modal" class="modal-overlay" onclick="closeConfidenceModal()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2><i class="fas fa-book"></i> Ganhe Autoconfiança</h2>
+                    <button class="modal-close" onclick="closeConfidenceModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Autoconfiança não é um traço de personalidade mágico que algumas pessoas têm e outras não. É um estado psicológico construído sobre crenças auto-validantes e comportamentos competentes. A ciência, especialmente a Psicologia Positiva e a Terapia Cognitivo-Comportamental (TCC), identificou várias técnicas eficazes.</p>
+                    
+                    <p>Aqui estão as técnicas mais comprovadas cientificamente para ganhar autoconfiança, explicadas de forma prática.</p>
+                    
+                    <h3>1. A Base: Domínio de Competência e "Small Wins" (Pequenas Vitórias)</h3>
+                    <p><strong>O Conceito Científico:</strong> A Teoria da Auto-Eficácia, do psicólogo Albert Bandura, é a pedra angular. Ela postula que a crença na própria capacidade (autoconfiança) é construída principalmente através de experiências de domínio. Ou seja, quando você prova para si mesmo que pode realizar algo.</p>
+                    
+                    <p><strong>Como Fazer:</strong></p>
+                    <ul>
+                        <li><strong>Defina Metas Minúsculas e Incrementais:</strong> Em vez de "ser promovido", a meta é "elaborar uma proposta para um novo projeto esta semana". Em vez de "ficar em forma", é "caminhar 10 minutos hoje".</li>
+                        <li><strong>Acompanhe seu Progresso:</strong> Use um diário ou um aplicativo. Verificar uma lista de tarefas concluídas fornece um feedback visual poderoso de sua competência.</li>
+                        <li><strong>Celebre as Conquistas:</strong> Reconheça conscientemente a conclusão de cada pequena tarefa. Isso reforça o circuito neural de "sucesso" no seu cérebro.</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> Cada "small win" é uma evidência concreta para seu cérebro de que você é capaz. Isso quebra o ciclo de impotência e constrói um histórico de sucessos.</p>
+                    
+                    <h3>2. Reestruturação Cognitiva: Mude seu Diálogo Interno</h3>
+                    <p><strong>O Conceito Científico:</strong> A TCC ensina que nossos pensamentos influenciam nossos sentimentos e comportamentos. Pensamentos autodepreciativos ("vou falhar", "não sou bom o suficiente") minam a autoconfiança antes mesmo de agirmos.</p>
+                    
+                    <p><strong>Como Fazer:</strong></p>
+                    <ul>
+                        <li><strong>Identifique os Pensamentos Negativos:</strong> Torne-se um observador dos seus próprios pensamentos. Quando se sentir inseguro, anote o que está passando pela sua cabeça.</li>
+                        <li><strong>Desafie a Evidência:</strong> Pergunte-se: "Qual é a evidência real para este pensamento? Já superei desafios semelhantes no passado? Estou catastrofizando?"</li>
+                        <li><strong>Substitua por um Pensamento Mais Racional e Útil:</strong> Troque "Vou fazer papel de bobo" por "Estou bem preparado e, mesmo que cometa um erro, é uma oportunidade de aprender".</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> Você literalmente reconecta seu cérebro para parar de acreditar nas distorções cognitivas automáticas. Isso reduz a ansiedade e libera capacidade mental para focar no desempenho, não no medo.</p>
+                    
+                    <h3>3. Visualização ou Ensaio Mental</h3>
+                    <p><strong>O Conceito Científico:</strong> Estudos em neurociência mostram que o cérebro ativa redes neuronais semelhantes quando você visualiza uma ação e quando você realmente a executa. Atletas de elite usam essa técnica extensivamente.</p>
+                    
+                    <p><strong>Como Fazer:</strong></p>
+                    <ul>
+                        <li><strong>Visualize o Processo, não Apenas o Resultado:</strong> Não imagine apenas recebendo o troféu. Imagine-se praticando com disciplina, superando obstáculos durante a tarefa e mantendo a calma.</li>
+                        <li><strong>Envolva Todos os Sentidos:</strong> Como é o ambiente? Quais sons você ouve? O que você sente (confiante, focado)? Quanto mais vívido, melhor.</li>
+                        <li><strong>Visualize a Lidagem com Adversidades:</strong> Imagine um contratempo (ex.: uma pergunta difícil) e veja-se lidando com isso com calma e competência.</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> A visualização familiariza o cérebro com o caminho para o sucesso, tornando a execução real menos assustadora e mais automática.</p>
+                    
+                    <h3>4. Aprendizado por Modelagem (Encontrar Modelos)</h3>
+                    <p><strong>O Conceito Científico:</strong> Bandura também mostrou que observar outras pessoas (modelos) realizando uma tarefa com sucesso pode aumentar nossa crença em nossa própria capacidade de fazê-lo.</p>
+                    
+                    <p><strong>Como Fazer:</strong></p>
+                    <ul>
+                        <li><strong>Identifique Pessoas Relevantes:</strong> Procure por pessoas que já alcançaram o que você deseja. Elas não precisam ser famosas; podem ser colegas, mentores ou líderes da sua comunidade.</li>
+                        <li><strong>Estude sua Jornada:</strong> Preste atenção não apenas em seu sucesso, mas em seus fracassos e como os superaram. Isso humaniza o processo e mostra que o sucesso é alcançável.</li>
+                        <li><strong>Pergunte e Aprenda:</strong> Se possível, converse com elas. A maioria das pessoas está disposta a compartilhar conselhos.</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> Ver um "modelo" semelhante a você ter sucesso cria a crença de "se ele/ela conseguiu, eu também posso".</p>
+                    
+                    <h3>5. Ajuste sua Linguagem Corporal: "Faking Until You Become It"</h3>
+                    <p><strong>O Conceito Científico:</strong> A pesquisa da psicóloga social Amy Cuddy sobre as "posturas de poder" mostrou que manter uma postura expansiva e confiante por apenas dois minutos pode aumentar os níveis de testosterona (hormônio ligado à dominância) e diminuir o cortisol (hormônio do estresse).</p>
+                    
+                    <p><strong>Como Fazer:</strong></p>
+                    <ul>
+                        <li><strong>Adote uma Postura de Poder:</strong> Por 2 minutos, em um local privado (como um banheiro antes de uma reunião), fique em pé com os pés afastados, as mãos nos quadris (pose de "Mulher-Maravilha" ou "Super-Homem"), ou sente-se reclinado, com as mãos atrás da cabeça.</li>
+                        <li><strong>Mantenha Contato Visual:</strong> Pratique olhar nos olhos das pessoas durante as conversas.</li>
+                        <li><strong>Sorria Mais:</strong> O ato de sorrir, mesmo forçado, pode enviar sinais de segurança ao seu cérebro.</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> Seu corpo influencia sua mente. Ao adotar uma linguagem corporal confiante, você sinaliza para seu sistema neuroendócrino que está seguro e no controle, reduzindo fisicamente a sensação de estresse e ameaça.</p>
+                    
+                    <h3>6. Pratique a Autocompaixão (Não a Autocrítica)</h3>
+                    <p><strong>O Conceito Científico:</strong> Pesquisas da Dra. Kristin Neff mostram que a autocompaixão é um antídoto poderoso contra a baixa autoconfiança. Enquanto a autocrítica paralisa, a autocompaixão permite que você encare falhas sem desmoronar.</p>
+                    
+                    <p><strong>Como Fazer:</strong> Quando cometer um erro ou se sentir inadequado, faça três coisas:
+                    <ul>
+                        <li><strong>Seja Mindful:</strong> Reconheça a dor sem dramatizar. "Isto dói. Estou me sentindo inseguro."</li>
+                        <li><strong>Lembre-se de sua Humanidade Comum:</strong> "Todo mundo falha às vezes. Fazer parte da condição humana."</li>
+                        <li><strong>Seja Gentil Consigo Mesmo:</strong> Fale consigo como falaria com um bom amigo. "Está tudo bem. Você fez o melhor que pôde naquele momento. O que podemos aprender com isso?"</li>
+                    </ul>
+                    
+                    <p><strong>Por que Funciona:</strong> A autocompaixão quebra o ciclo de medo do fracasso, permitindo que você corra mais riscos e se recupere mais rapidamente dos contratempos.</p>
+                    
+                    <h3>Plano de Ação Prático e Integrado</h3>
+                    <ul>
+                        <li><strong>Escolha uma Área:</strong> Foque em uma área específica da sua vida onde quer mais autoconfiança (ex.: trabalho, relacionamentos, hobbies).</li>
+                        <li><strong>Defina uma "Small Win" Diária:</strong> Algo que possa ser feito em 15 minutos ou menos.</li>
+                        <li><strong>Antes de Agir:</strong> Passe 1 minuto visualizando-se realizando a tarefa com sucesso.</li>
+                        <li><strong>Durante a Tarefa:</strong> Monitore seu diálogo interno. Se for negativo, desafie-o.</li>
+                        <li><strong>Após Concluir:</strong> Celebre a conquista. Anote no diário.</li>
+                        <li><strong>Quando Surgir um Obstáculo:</strong> Pratique a autocompaixão em vez da autocrítica.</li>
+                    </ul>
+                    
+                    <p>A autoconfiança não é um destino, mas uma jornada de construção contínua. Ao aplicar essas técnicas de forma consistente, você não está "fingindo" até conseguir, está construindo até se tornar.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Card do Fluxo 1: Check-in Diário -->
@@ -2644,7 +2793,43 @@
 
         }
 
+        // Function to show confidence information
+        function showConfidenceInfo() {
+            const modal = document.getElementById('confidence-modal');
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+        
+        // Function to close the confidence modal
+        function closeConfidenceModal() {
+            const modal = document.getElementById('confidence-modal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const confidenceModal = document.getElementById('confidence-modal');
+                if (confidenceModal && confidenceModal.classList.contains('active')) {
+                    closeConfidenceModal();
+                }
+                
+                const timelineModal = document.getElementById('timeline-modal');
+                if (timelineModal && timelineModal.classList.contains('active')) {
+                    closeTimelineModal();
+                }
+            }
+        });
+
     </script>
+
+    <!-- Floating Button with Book Icon -->
+    <button class="floating-btn" onclick="showConfidenceInfo()">
+        <i class="fas fa-book"></i>
+    </button>
 
 </body>
 
